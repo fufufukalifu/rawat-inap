@@ -1,6 +1,10 @@
 @extends('layouts.main')
 @section('content')
 <div class="row">
+  <h1>Opik Sutisna</h1>
+  <h1>Opik Sutisna</h1>
+  <h1>Opik Sutisna</h1>
+  
 	<div class="container">
 		<div class="col-md-6">
 			<div class="row mt">
