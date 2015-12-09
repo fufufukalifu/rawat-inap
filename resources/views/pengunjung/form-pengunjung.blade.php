@@ -59,6 +59,9 @@
          <input type="text" placeholder="contoh :Jajang Miharja" class="form-control">
         </div>
        </div>
+
+
+       
        
        <div class="form-group">
         <div class="col-md-10">
