@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('pengunjung', 'HomeController@daftar_pengunjung');
+Route::get('ruangan','HomeController@tampil_ruangan');
