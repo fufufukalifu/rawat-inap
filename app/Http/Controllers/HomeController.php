@@ -97,10 +97,28 @@ class HomeController extends Controller
         return view('ruangan.view-ruangan');
     }
 
-     public function tampil_xxx(){
+     public function tampil_opik1(){
         return view('ruangan.v');
     }
-     public function tampil_ooo(){
+     public function tampil_opik2(){
+        return view('ruangan.view-ruangan');
+    }
+    public function tampil_didik(){
+        return view('ruangan.v');
+    }
+     public function tampil_didik2(){
+        return view('ruangan.view-ruangan');
+    }
+    public function tampil_azziz(){
+        return view('ruangan.v');
+    }
+     public function tampil_aziz(){
+        return view('ruangan.view-ruangan');
+    }
+     public function tampil_opi(){
+        return view('ruangan.view-ruangan');
+    }
+    public function tampil_opi(){
         return view('ruangan.view-ruangan');
     }
 }
