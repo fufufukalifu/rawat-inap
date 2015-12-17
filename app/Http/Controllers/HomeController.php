@@ -98,7 +98,7 @@ class HomeController extends Controller
     }
 
      public function tampil_xxx(){
-        return view('ruangan.view-ruangan');
+        return view('ruangan.v');
     }
      public function tampil_ooo(){
         return view('ruangan.view-ruangan');
