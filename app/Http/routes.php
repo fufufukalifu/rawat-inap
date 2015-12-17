@@ -21,6 +21,8 @@ Route::get('ruangan','HomeController@tampil_ruangan');
 
 Route::get('update_pendaftaran', 'HomeController@update_pendaftaran');
 
+Route::get('pendaftaran','HomeController@daftar_pasien');
+
 // Route::get('aziz', 'HomeController@update_pendaftaran');
 
 // Route::get('aziz2', 'HomeController@update_pendaftaran');
