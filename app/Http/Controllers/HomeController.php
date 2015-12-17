@@ -89,8 +89,11 @@ class HomeController extends Controller
         return view('pengunjung.form-pengunjung');
     }
 
-    public function tampil_ruangan(){
-        return view('ruangan.view-ruangan');
+    public function update_pendaftaran(){
+        return view('pengunjung.update-pendaftaran');
     }
 
+      public function tampil_ruangan(){
+        return view('ruangan.view-ruangan');
+    }
 }

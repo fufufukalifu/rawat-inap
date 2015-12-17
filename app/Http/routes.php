@@ -16,4 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('pengunjung', 'HomeController@daftar_pengunjung');
+<<<<<<< HEAD
 Route::get('ruangan','HomeController@tampil_ruangan');
+=======
+
+Route::get('update_pendaftaran', 'HomeController@update_pendaftaran');
+>>>>>>> 3467b1db61122f09d4f86bda285c4daefd2fde1b

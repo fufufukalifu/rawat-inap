@@ -20,7 +20,6 @@
 
   test
   test opi...........................
-
   
 	<div class="container">
 		<div class="col-md-6">
