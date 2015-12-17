@@ -18,6 +18,10 @@
   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
   cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
   proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+  test
+  test opi...........................
+  
 	<div class="container">
 		<div class="col-md-6">
 			<div class="row mt">
@@ -76,6 +80,9 @@
          <input type="text" placeholder="contoh :Jajang Miharja" class="form-control">
         </div>
        </div>
+
+
+       
        
        <div class="form-group">
         <div class="col-md-10">
