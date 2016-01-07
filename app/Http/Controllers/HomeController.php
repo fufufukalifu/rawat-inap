@@ -103,8 +103,9 @@ class HomeController extends Controller
     //  public function tampil_opik2(){
     //     return view('ruangan.view-ruangan');
     // }
-    // public function tampil_didik(){
-    //     return view('ruangan.v');
+    public function daftar_pasien(){
+        return view('Pasien.form-pendaftaran');
+    }
     // }
     //  public function tampil_didik2(){
     //     return view('ruangan.view-ruangan');
