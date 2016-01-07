@@ -1,133 +1,168 @@
 @extends('layouts.main')
 @section('content')
-<div class="row">
-
-	<div class="container">
-		<div class="col-md-12">
-			<div class="row mt">
-				<div class="col-lg-12">
-					<div class="form-panel">
+	<!-- BASIC FORM ELELEMNTS -->
+          	<div class="row mt">
+          		<div class="col-lg-12">
+                  <div class="form-panel">
+sHSJ
 					 	<h1 class="mb"><i class="fa fa-male"></i> Data Pasien</h1>
 						<form class="form-horizontal style-form" method="get">
-					       	<div class="form-group">
-					        	<div class="col-md-4">
-					         		<input type="text" placeholder="No Pendaftaran" class="form-control">
-					        	</div>
-					       </div>
+						<div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">No Pendaftaran</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-					    <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Id Ruangan" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Nama Pasien</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Nama Pasien" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Nama Panggilan</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Nama Panggilan" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Jenis Kelamin</label>
+                            	<div class="col-sm-2">
+	                                <select id="t" class="form-control">
+	                                	<option>Pria</option>
+	                                	<option>Wanita</option>
+	                                </select>
+	                            </div>
+                        </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Jenis Kelamin" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Tempat Lahir</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Tempat Lahir" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Tanggal Lahir</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="date" placeholder="Tanggal Lahir" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Umur</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
+ 						<hr>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Umur" class="form-control">
-				        	</div>
-				       </div>
+ 						<div class="form-group">
+                            <label class="col-sm-2 col-sm-2 control-label">Kecamatan / Kelurahan</label>
+                            	<div class="col-sm-2">
+	                                <select id="t" class="form-control">
+	                                	<option>Bojong Kidul</option>
+	                                	<option>Lembang</option>
+	                                </select>
+	                            </div>
+	                            <div class="col-sm-3">
+	                                <select id="t" class="form-control">
+	                                	<option>Cibaduyut Wetan</option>
+	                                	<option>Cibaduyut Kulon</option>
+	                                </select>
+	                            </div>
+                        </div>
 
-				       <ul class="sidebar-menu" id="nav-accordion">
-				       <li class="mt margin0"><hr></li>
-				       </ul>
+				       	<div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Alamat</label>
+	                            <div class="col-sm-6">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                            <label class="col-sm-1 control-label">RT : </label>
+	                            <div class="col-sm-1">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                            <label class="col-sm-1 control-label">RW : </label>
+	                            <div class="col-sm-1">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Kecamatan / Kelurahan" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Telepon</label>
+	                            <div class="col-sm-1">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                            <div class="col-sm-2">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
+	                    <hr>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Alamat" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Agama</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Telepone" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Maritial Status</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <ul class="sidebar-menu" id="nav-accordion">
-				       <li class="mt margin0"><hr></li>
-				       </ul>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Pekerjaan</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
+	                    <hr>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Agama" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Nama Ibu/Bapak</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Maritial Status" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Alamat orang tua</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Pekerjaan" class="form-control">
-				        	</div>
-				       </div>
+	                    <div class="form-group">
+	                        <label class="col-sm-2 col-sm-2 control-label">Nama Suami/Istri</label>
+	                            <div class="col-sm-10">
+	                                <input type="text" class="form-control">
+	                            </div>
+	                    </div>
 
-				       <ul class="sidebar-menu" id="nav-accordion">
-				       <li class="mt margin0"><hr></li>
-				       </ul>
-
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Nama Ibu/Bapak" class="form-control">
-				        	</div>
-				       </div>
-
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Alamat orang tua" class="form-control">
-				        	</div>
-				       </div>
-
-				       <div class="form-group">
-				        	<div class="col-md-4">
-				         		<input type="text" placeholder="Nama Suami/Istri" class="form-control">
-				        	</div>
-				       </div>
-
-				       <button class="btn btn-primary"><i class="fa fa-plus-circle"></i> Perbarui</button>
+                     </form>
+          			</div><!-- /form-panel -->
+          		</div><!-- /col-lg-12 -->
 
 
+		               	
+          	<!-- CUSTOM TOGGLES -->
+          		<div class="col-lg-12">
+          			<div class="form-panel">
+          			<div class="row mt">
+          				<div class="col-sm-10 text-center">
+          				</div>
+	          			<div class="col-sm-2 text-center">   
+				       		<button class="btn btn-primary"><i class="fa fa-plus-circle"></i> Perbarui</button>
+				       	</div>
+				       	</div>
+				       	</div><!-- /form-panel -->
+          		</div><!-- /col-lg-12 -->
+          	</div><!-- /row -->
 
-	</div>
-
-</div>
 @endsection

@@ -41,7 +41,16 @@ Route::get('update_pendaftaran', 'HomeController@update_pendaftaran');
 
 // Route::get('didik2', 'HomeController@update_pendaftaran');
 
+Route::get('form', 'HomeController@form');
 
+Route::post('tambah', 'HomeController@tambah');
+
+Route::post('update', 'HomeController@updates');
+
+Route::get('DeletePasien/{id}', 'HomeController@delete');
+
+Route::get('EditPasien/{id}', 'HomeController@edits');
+ 
 
 
 
