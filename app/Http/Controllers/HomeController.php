@@ -97,9 +97,9 @@ class HomeController extends Controller
         return view('ruangan.view-ruangan');
     }
 
-    //  public function tampil_opik1(){
-    //     return view('ruangan.v');
-    // }
+     public function tampil_obat(){
+        return view('obat.view-obat');
+    }
     //  public function tampil_opik2(){
     //     return view('ruangan.view-ruangan');
     // }

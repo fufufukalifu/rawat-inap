@@ -25,7 +25,7 @@ Route::get('update_pendaftaran', 'HomeController@update_pendaftaran');
 
 // Route::get('aziz2', 'HomeController@update_pendaftaran');
 
-// Route::get('opik', 'HomeController@update_pendaftaran');
+Route::get('obat', 'HomeController@tampil_obat');
 
 // Route::get('opik2', 'HomeController@update_pendaftaran');
 
