@@ -43,17 +43,17 @@ Route::get('obat', 'HomeController@tampil_obat');
 
 // Route::get('didik2', 'HomeController@update_pendaftaran');
 
-Route::get('form', 'HomeController@form');
+Route::get('form', 'PendaftaranController@form');
 
-Route::post('tambah', 'HomeController@tambah');
+Route::post('tambah', 'PendaftaranController@tambah');
 
-Route::post('update', 'HomeController@updates');
+Route::post('update', 'PendaftaranController@updates');
 
-Route::get('DeletePasien/{id}', 'HomeController@delete');
+Route::get('DeletePasien/{id}', 'PendaftaranController@delete');
 
-Route::get('EditPasien/{id}', 'HomeController@edits');
+Route::get('EditPasien/{id}', 'PendaftaranController@edits');
  
-
+Route::get('ruangan','PendaftaranController@tampil_ruangan');
 
 
 
