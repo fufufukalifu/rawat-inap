@@ -41,7 +41,7 @@ class PendaftaranController extends Controller
                 );
             $i = DB::table('pasiens')->insert($data);
             if ($i > 0 ) {
-                return redirect('ruangan');
+                return redirect('ruangan1');
             }
         }
     }
@@ -50,7 +50,7 @@ class PendaftaranController extends Controller
         $i = DB::table('pasiens')->where('id_pasien', $id)->delete();
 
         if ($i > 0 ) {
-                return redirect('ruangan');
+                return redirect('ruangan1');
             
         }
     }
@@ -77,7 +77,7 @@ class PendaftaranController extends Controller
                 );
             $i = DB::table('pasiens')->where('id_pasien', $post['id_pasien'])->update($data);
             if ($i > 0 ) {
-                return redirect('ruangan');
+                return redirect('ruangan1');
             }
         }
     }

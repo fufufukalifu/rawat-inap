@@ -53,7 +53,7 @@ Route::get('DeletePasien/{id}', 'PendaftaranController@delete');
 
 Route::get('EditPasien/{id}', 'PendaftaranController@edits');
  
-Route::get('ruangan','PendaftaranController@tampil_ruangan');
+Route::get('ruangan1','PendaftaranController@tampil_ruangan');
 
 
 
