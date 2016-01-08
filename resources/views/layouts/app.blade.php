@@ -35,50 +35,18 @@
    <!-- LOGOUT -->
    <div class="top-menu">
     <ul class="nav pull-right top-menu">
-     <li><a class="logout" href="{{ url('/auth/logout') }}">Logout</a></li>
+    	@if (Auth::guest())
+    	<li><a class="logout" href="{{ url('/auth/register') }}">Register</a></li>
+    	<li><a class="logout" href="{{ url('/auth/login') }}">Logout</a></li>
+		@else
+     	<li><a class="logout" href="{{ url('/auth/logout') }}">Logout</a></li>
     </ul>
+    @endif
    </div>
    </header>
   
 
-  <aside>
-   <div id="sidebar"  class="nav-collapse ">
-    
-    <ul class="sidebar-menu" id="nav-accordion">
-     <p class="centered">
-      <a href="profile.html">
-      <img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
-     </p>
-
-     <li class="mt margin0">
-      <a href=""><i class="fa fa-plus-square"></i>
-       <span>Daftar Rawat Inap</span>
-      </a>
-     </li>
-     
-     <li class="mt margin0">
-      <a href=""><i class="fa fa-list-alt"></i>
-       <span>Daftar Ruangan</span>
-      </a>
-     </li>
-     <li class="mt margin0"><hr></li>
-     <li class="mt margin0">
-      <a href=""><i class="fa fa-credit-card"></i>
-       <span>Pembayaran</span>
-      </a>
-     </li>
-     
-     <li class="mt margin0">
-      <a href=""><i class="fa fa-male"></i>
-       <span>Pendaftaran Pengunjung</span>
-      </a>
-     </li>
-     
-    </ul>
-   
-   </div>
-  </aside>
-
+  
   <section id="main-content">
    <section class="wrapper site-min-height">
     @yield('content')

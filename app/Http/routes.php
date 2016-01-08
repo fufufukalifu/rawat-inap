@@ -31,7 +31,7 @@ Route::get('obat', 'HomeController@tampil_obat');
 
 // Route::get('opik2', 'HomeController@update_pendaftaran');
 
-// Route::get('Enur', 'HomeController@update_pendaftaran');
+// Route::get('auth/login', 'Auth\AuthController@getLogin');
 
 // Route::get('Enur', 'HomeController@update_pendaftaran');
 
@@ -54,6 +54,16 @@ Route::get('DeletePasien/{id}', 'PendaftaranController@delete');
 Route::get('EditPasien/{id}', 'PendaftaranController@edits');
  
 Route::get('ruangan1','PendaftaranController@tampil_ruangan');
+
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 
 
