@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Opik sutisna">
 
-    <title>Aplikasi Rawat Inapooooooo</title>
+    <title>Aplikasi Rawat Inap</title>
         
     <link href="{{asset("assets/css/bootstrap.css")}}" rel="stylesheet">
     <!--external css-->
@@ -54,13 +54,13 @@
      </p>
 
      <li class="mt margin0">
-      <a href=""><i class="fa fa-plus-square"></i>
+      <a href="{{ url("/pasien") }}"><i class="fa fa-plus-square"></i>
        <span>Daftar Rawat Inap</span>
       </a>
      </li>
      
      <li class="mt margin0">
-      <a href=""><i class="fa fa-list-alt"></i>
+      <a href="{{url("/ruangan")}}"><i class="fa fa-list-alt"></i>
        <span>Daftar Ruangan</span>
       </a>
      </li>
@@ -72,8 +72,8 @@
      </li>
      
      <li class="mt margin0">
-      <a href=""><i class="fa fa-male"></i>
-       <span>Pendaftaran Pengunjung</span>
+      <a href="{{url("/obat")}}"><i class="fa fa-columns"></i>
+       <span>Rekapitulasi Obat</span>
       </a>
      </li>
      

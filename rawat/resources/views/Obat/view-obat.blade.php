@@ -1,28 +1,29 @@
 @extends('layouts.main')
 @section('content')
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
-        <h4 class="modal-title" id="myModalLabel"></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Hasil Pencarian</h4>
       </div>
-      <div class="modal-body" align="center">
-        <div class="clear"><br></div>  
-        <br>
-        <br>
-        <br>
-
+      <div class="modal-body">
+        
       </div>
-      <div class="modal-footer" align="center">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
+
   </div>
 </div>
 
 <div class="row mt">
+  <h1>Coba</h1>
 <!-- data pasien -->
 <div class="col-lg-12">
    <div class="form-panel">
@@ -33,6 +34,7 @@
         <label class="col-sm-2 col-sm-2 control-label">Cari</label>
         <div class="col-sm-5">
             <input type="text" class="form-control" name="search" placeholder="Enter to search" id="onenter">
+            <button class="btn btn-primary" value="Cari" id="cari">cari</button>
         </div>
       </div>
 
@@ -41,7 +43,7 @@
         <div class="col-sm-3">
          <input type="text" class="form-control" name="value">
          <br>
-         <button class="btn btn-primary" value="Cari" id="cari">cari</button>
+         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari">Cari</button>
         </div>
       </div>
       
@@ -149,8 +151,14 @@
 <!-- daftar Penggunaan Obat -->
 </div>
 <script type="text/javascript">
+
  $('#cari').on('click',function (e) {
-    alert('masuk');
+    $.get('{{ url("search_pasien") }}', function(res){
+                    bootbox.dialog({
+                        title: "Ketidaksesuaian",
+                        message: res
+                    });
+                });
     });
 </script>
 @endsection

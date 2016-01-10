@@ -37,8 +37,14 @@ Route::get('pembayaran', 'HomeController@form_pembayaran');
 // Route::get('anggi', 'HomeController@update_pendaftaran');
 
 // Route::get('anggi', 'HomeController@update_pendaftaran');
-
-Route::get('pasien','PasienController@index');Route::get('formPasien', 'PasienController@formPasien');Route::post('tambah', 'PasienController@tambah');Route::post('update', 'PasienController@updates');Route::get('DeletePasien/{id}', 'PasienController@delete');Route::get('EditPasien/{id}', 'PasienController@edits');
+Route::get('/', 'Auth\AuthController@getLogin');
+Route::get('pasien','PasienController@index');
+Route::get('formPasien', 'PasienController@formPasien');
+Route::post('tambahpasien', 'PasienController@tambahpasien');
+Route::post('updatespasien', 'PasienController@updatespasien');
+Route::get('DeletePasien/{id}', 'PasienController@delete');
+Route::get('UbahPasien/{id}', 'PasienController@edits');
+Route::get('search', 'PasienController@search');
 
 // Route::get('didik2', 'HomeController@update_pendaftaran');
 
