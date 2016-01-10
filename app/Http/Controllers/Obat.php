@@ -45,14 +45,10 @@ class Obat extends Controller
     }
 
     public function search(Request $request){
-        return view('Obat.view-hasil-pencarian-pasien');    
-
-    // // Gets the query string from our form submission 
-    // $query = Request::input('no-pendaftaran');
-    // // Returns an array of articles that have the query string located somewhere within 
-    // // our articles titles. Paginates them so we can break up lots of search results.
-    // $daftar_pasien = DB::table('pasiens')->where('id_pasien', 'LIKE', '%' . $query . '%')->paginate(10);
-    // // returns a view and passes the view the list of articles and the original query.
-    // return view('Obat.hasil_pencarian_pasien', compact('daftar_pasien', 'query'));
- }
+        $search = \Request::get('search'); //<-- we use global request to get the param of URI 
+        $pasiens = DB::table('pasiens')
+                    ->where('nama_pasien', 'like', "$search%")
+                    ->get();   
+        return view('Obat.view-hasil-pencarian-pasien',compact('pasiens'));
+    }
 }

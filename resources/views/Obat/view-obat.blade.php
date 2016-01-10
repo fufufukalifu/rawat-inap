@@ -1,15 +1,38 @@
 @extends('layouts.main')
 @section('content')
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body" align="center">
+        <div class="clear"><br></div>  
+        <br>
+        <br>
+        <br>
+
+      </div>
+      <div class="modal-footer" align="center">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="row mt">
 <!-- data pasien -->
 <div class="col-lg-12">
    <div class="form-panel">
     <h4 class="mb">Data Pasien</h4>
-    <form class="form-horizontal style-form" method="get" action="{{action('Obat@search')}}">
+    <!-- <form class="form-horizontal style-form" method="get" action="{{action('Obat@search')}}">-->
+    <form class="form-horizontal style-form" method="get" action="">
       <div class="form-group">
-        <label class="col-sm-2 col-sm-2 control-label">No Pendaftaran</label>
+        <label class="col-sm-2 col-sm-2 control-label">Cari</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" name="no-pendaftaran">
+            <input type="text" class="form-control" name="search" placeholder="Enter to search" id="onenter">
         </div>
       </div>
 
@@ -18,7 +41,7 @@
         <div class="col-sm-3">
          <input type="text" class="form-control" name="value">
          <br>
-         <input type="submit" class="btn btn-primary" value="Cari">
+         <input type="submit" class="btn btn-primary" value="Cari" id="cari">
         </div>
       </div>
       
@@ -125,9 +148,9 @@
 </div>
 <!-- daftar Penggunaan Obat -->
 </div>
-
-@endsection
 <script type="text/javascript">
-  var d = new Date();
-  var now = d.getDate();
+ $('#cari').on('click',function (e) {
+    alert('masuk');
+    });
 </script>
+@endsection
