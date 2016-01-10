@@ -60,7 +60,7 @@
 <div class="col-lg-12">
    <div class="form-panel">
     <h4 class="mb">Form Penggunaan Obat</h4>
-    <form class="form-horizontal style-form" method="post" action="{{action('Obat@tambah')}}">
+    <form class="form-horizontal style-form" method="post" action="{{action('obat@tambah')}}">
       <div class="form-group">
        <div class="col-md-6">
         <label class="col-sm-4 col-sm-4 control-label">Tanggal</label>
