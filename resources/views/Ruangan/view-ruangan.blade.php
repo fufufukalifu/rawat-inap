@@ -10,11 +10,10 @@
                   <div class="white-header">
                     <h5><?php echo $row->nama_ruangan ?></h5>
                   </div>
-                   <div class="row dblklik">
+                   <div class="col-md-12">
                         <a data-toggle="tab" href="#<?php echo $row->nama_ruangan ?>"> <img src="assets/img/product.png" width="120"></a>
-                        <div class="col-md-6">
-							<p class="small mt">TOTAL SPEND</p>
-							<p>$ 47,60</p>
+                        <div class="col-md-12">
+							<a class="small mt" href="{{action('Obat@tambah')}}">Detail</a>
 						</div>
                   </div>
                 </div>
