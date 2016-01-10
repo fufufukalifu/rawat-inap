@@ -17,7 +17,7 @@ class PasienController extends Controller
      */
     public function index()
     {
-        $result = DB::table('pasiens')->get();
+        $result = DB::table('pasiens')->orderBy('nama_pasien')->get();
         return view('pasien.index')->with('pasien', $result);
     }
 
