@@ -21,6 +21,14 @@ class PasienController extends Controller
         return view('pasien.index')->with('pasien', $result);
     }
 
+    public function search(Request $request){
+        $search = \Request::get('search'); //<-- we use global request to get the param of URI 
+        $pasiens = DB::table('pasiens')
+                    ->where('nama_pasien', 'like', "%$search%")
+                    ->get();   
+        return view('pasien.index',compact('pasiens'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -93,7 +101,7 @@ class PasienController extends Controller
         return view('pasien.create');
     }
 
-    public function tambah(Request $request) {
+    public function tambahpasien(Request $request) {
         $post   = $request->all();
         $v      = \Validator::make($request->all(),
             [ 
@@ -158,7 +166,7 @@ class PasienController extends Controller
         return view('pasien.edit')->with('row', $row);
     }
 
-    public function updates (Request $request) {
+    public function updatespasien(Request $request) {
         $post   = $request->all();
         $v      = \Validator::make($request->all(),
             [ 

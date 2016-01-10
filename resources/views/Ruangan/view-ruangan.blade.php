@@ -12,7 +12,7 @@
                   </div>
                    <div class="col-md-12">
 
-                        <a data-toggle="tab" href="#<?php echo $row->nama_ruangan ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
+                        <a data-toggle="tab" href="#<?php echo $row->jenis_ruangan ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
                         <div class="col-md-12">
 							<a class="small mt" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
 						</div>
@@ -48,16 +48,17 @@
         foreach ($data as $row) {
       ?>
 
-	  <div id="<?php echo $row->nama_ruangan ?>" class="tab-pane fade">
+	  <div id="<?php echo $row->jenis_ruangan ?>" class="tab-pane fade">
       <div class="col-md-12 mb">
               <!-- WHITE PANEL - TOP USER -->
               <div class="green-panel pn">
                 <div class="col-md-2 green-header">             
-                  <h5><?php echo $row->nama_ruangan ?></h5>       
+                  <h5><?php echo $row->jenis_ruangan ?></h5>       
                 </div>
                 <div class="col-md-12 mb">
 				<!-- menampilkan deskripsi dari kelas -->
                   <?php echo $row->keterangan ?>
+                
 
                 </div>
               </div>
