@@ -39,7 +39,7 @@ Route::post('tambahObat', 'Obat@tambah');
 
 // Route::get('anggi', 'HomeController@update_pendaftaran');
 
-// Route::get('didik', 'HomeController@update_pendaftaran');
+Route::get('pasien','PasienController@index');Route::get('formPasien', 'PasienController@formPasien');Route::post('tambah', 'PasienController@tambah');Route::post('update', 'PasienController@updates');Route::get('DeletePasien/{id}', 'PasienController@delete');Route::get('EditPasien/{id}', 'PasienController@edits');
 
 // Route::get('didik2', 'HomeController@update_pendaftaran');
 
