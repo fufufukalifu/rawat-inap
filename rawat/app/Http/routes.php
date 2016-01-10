@@ -38,7 +38,7 @@ Route::post('tambahObat', 'Obat@tambah');
 // Route::get('anggi', 'HomeController@update_pendaftaran');
 
 // Route::get('anggi', 'HomeController@update_pendaftaran');
-
+Route::get('/', 'Auth\AuthController@getLogin');
 Route::get('pasien','PasienController@index');
 Route::get('formPasien', 'PasienController@formPasien');
 Route::post('tambahpasien', 'PasienController@tambahpasien');
