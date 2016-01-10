@@ -33,7 +33,7 @@ Route::post('tambahObat', 'Obat@tambah');
 
 // Route::get('auth/login', 'Auth\AuthController@getLogin');
 
-Route::get('Pembayaran', 'HomeController@detailPembayaran');
+Route::get('pembayaran', 'HomeController@form_pembayaran');
 // Route::get('anggi', 'HomeController@update_pendaftaran');
 
 // Route::get('anggi', 'HomeController@update_pendaftaran');
