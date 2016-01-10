@@ -33,6 +33,7 @@
         <label class="col-sm-2 col-sm-2 control-label">Cari</label>
         <div class="col-sm-5">
             <input type="text" class="form-control" name="search" placeholder="Enter to search" id="onenter">
+            <button class="btn btn-primary" value="Cari" id="cari">cari</button>
         </div>
       </div>
 

@@ -6,7 +6,7 @@
  	<div class="row mt">
  		<div class="form-panel">
  			<h1 class="mb"><i class="fa fa-male"></i> Data Pasien</h1>
-				<form action="{{action('PasienController@updates')}}" method="post">
+				<form action="{{action('PasienController@updatespasien')}}" method="post">
 					<div class="form-group">
 	                   	<input type="hidden" name="_token" value="<?= csrf_token(); ?>">
 	                    <input type="hidden" name="id_pasien" value="<?= $row->id_pasien ?>">
@@ -62,22 +62,11 @@
 
 	               	<div class="form-group">
 	                   	<label class="control-label">Status</label>
-	                	<select name="meritial_status"  class="form-control">
-	                 	<option value="<?= $row->meritial_status ?>"><?= $row->meritial_status ?></option>
-	                 	<option value="Menikah">Menikah</option>
-	                 	<option value="Lajang">Lajang</option>
-	                	</select>
+	                 	<input class="form-control" type="text" name="meritial_status"  value="<?= $row->meritial_status ?>">
 	               	</div>
 	               	<div class="form-group">
 	                   	<label class="control-label">Agama</label>
-	                	<select name="agama" class="form-control" >
-	                    	<option value="<?= $row->agama ?>"><?= $row->agama ?></option>
-	                    	<option value="Islam">Islam</option>
-	                    	<option value="Hindu">Hindu</option>
-	                    	<option value="Budha">Budha</option>
-	                    	<option value="Kristen">Kristen</option>
-	                    	<option value="Khatolid">Khatolid</option>
-	                    </select>
+	                   	<input class="form-control" type="text" name="agama"  value="<?= $row->agama?>">
 	                </div>
 	                <div class="form-group">
                         <label class="control-label">Pekerjaan</label>
