@@ -27,8 +27,8 @@ Route::get('jenisRuangan', 'HomeController@tampil_jenis_ruangan');
 
 // Route::get('aziz2', 'HomeController@update_pendaftaran');
 
-Route::get('obat', 'HomeController@tampil_obat');
-
+Route::get('obat', 'Obat@tampil_penggunaan_obat');Route::get('search_pasien', 'Obat@search');
+Route::post('tambahObat', 'Obat@tambah');
 // Route::get('opik2', 'HomeController@update_pendaftaran');
 
 // Route::get('auth/login', 'Auth\AuthController@getLogin');
