@@ -8,14 +8,14 @@
            <div class="col-md-3 col-sm-4 mb">
                 <div class="white-panel pn">
                   <div class="white-header">
-                    <h5><?php echo $row->jenis_ruangan ?></h5>
+                    <h5><?php echo $row->nama_ruangan." ".$row->kelas_ruangan ?></h5>
                   </div>
                    <div class="col-md-12">
 
-                        <a data-toggle="tab" href="#<?php echo $row->jenis_ruangan ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
+                        <a data-toggle="tab" href="#<?php echo $row->no ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
                         <div class="col-md-12">
-							<a class="small mt" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
-						</div>
+              <a class="small mt" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
+            </div>
                   </div>
                 </div>
           </div><!-- /col-md-4 -->
@@ -24,8 +24,8 @@
 
         
 
-	  <div class="tab-content">
-	  <div id="home ?>" class="tab-pane  fade in active">
+    <div class="tab-content">
+    <div id="home ?>" class="tab-pane  fade in active">
       <div class="col-md-12 mb">
               <!-- WHITE PANEL - TOP USER -->
               <div class="green-panel pn">
@@ -33,7 +33,7 @@
                   <h5>Deskripsi Umum</h5>       
                 </div>
                 <div class="col-md-12 mb">
-				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                   tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
                   quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                   consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -43,30 +43,30 @@
                 </div>
               </div>
             </div><!-- /col-md-4 -->
-   	 </div>
-	   <?php 
+     </div>
+     <?php 
         foreach ($data as $row) {
       ?>
 
-	  <div id="<?php echo $row->jenis_ruangan ?>" class="tab-pane fade">
+    <div id="<?php echo $row->no ?>" class="tab-pane fade">
       <div class="col-md-12 mb">
               <!-- WHITE PANEL - TOP USER -->
-              <div class="green-panel pn">
-                <div class="col-md-2 green-header">             
-                  <h5><?php echo $row->jenis_ruangan ?></h5>       
+              <div class="white-panel pn">
+                <div class="col-md-2 white-header">             
+                  <h5><?php echo $row->nama_ruangan." ".$row->kelas_ruangan ?></h5>       
                 </div>
                 <div class="col-md-12 mb">
-				<!-- menampilkan deskripsi dari kelas -->
+        <!-- menampilkan deskripsi dari kelas -->
                   <?php echo $row->keterangan ?>
                 
 
                 </div>
               </div>
             </div><!-- /col-md-4 -->
-   	 </div>
-	   <?php } ?>
+     </div>
+     <?php } ?>
 
-	  </div>
+    </div>
 </div>
 
 @endsection

@@ -17,18 +17,18 @@ Route::get('/', function () {
 
 Route::get('pengunjung', 'HomeController@daftar_pengunjung');
 
-Route::get('ruangan','HomeController@tampil_ruangan');
+Route::get('ruangan','RuanganController@tampil_ruangan');
 
 Route::get('update_pendaftaran', 'HomeController@update_pendaftaran');
 
 Route::get('pendaftaran','HomeController@daftar_pasien');
 
-// Route::get('aziz', 'HomeController@update_pendaftaran');
+Route::get('jenisRuangan/{jenis_ruangan}', 'RuanganController@jenis_ruangan');
 
 // Route::get('aziz2', 'HomeController@update_pendaftaran');
 
-Route::get('obat', 'HomeController@tampil_obat');
-
+Route::get('obat', 'Obat@tampil_penggunaan_obat');Route::get('search_pasien', 'Obat@search');
+Route::post('tambahObat', 'Obat@tambah');
 // Route::get('opik2', 'HomeController@update_pendaftaran');
 
 // Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -38,7 +38,7 @@ Route::get('Pembayaran', 'HomeController@detailPembayaran');
 
 // Route::get('anggi', 'HomeController@update_pendaftaran');
 
-// Route::get('didik', 'HomeController@update_pendaftaran');
+Route::get('pasien','PasienController@index');Route::get('formPasien', 'PasienController@formPasien');Route::post('tambah', 'PasienController@tambah');Route::post('update', 'PasienController@updates');Route::get('DeletePasien/{id}', 'PasienController@delete');Route::get('EditPasien/{id}', 'PasienController@edits');
 
 // Route::get('didik2', 'HomeController@update_pendaftaran');
 

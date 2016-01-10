@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Opik sutisna">
 
-    <title>Aplikasi Rawat Inap</title>
+    <title>Aplikasi Rawat Inapooooooo</title>
         
     <link href="{{asset("assets/css/bootstrap.css")}}" rel="stylesheet">
     <!--external css-->
@@ -15,6 +15,9 @@
     <!-- Custom styles for this template -->
     <link href="{{asset("assets/css/style.css")}}" rel="stylesheet">
     <link href="{{asset("assets/css/style-resposive.css")}}" rel="stylesheet">
+
+     <script src="{{asset("assets/js/jquery.js")}}"></script>
+    <script src="{{asset("assets/js/bootstrap.min.js")}}"></script>
 
   <style>
    .margin0{
@@ -47,7 +50,7 @@
     <ul class="sidebar-menu" id="nav-accordion">
      <p class="centered">
       <a href="profile.html">
-      <img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a>
+      <img src="{{ asset("assets/img/ui-sam.jpg") }}" class="img-circle" width="60"></a>
      </p>
 
      <li class="mt margin0">
