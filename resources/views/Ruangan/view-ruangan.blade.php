@@ -8,12 +8,13 @@
            <div class="col-md-3 col-sm-4 mb">
                 <div class="white-panel pn">
                   <div class="white-header">
-                    <h5><?php echo $row->nama_ruangan ?></h5>
+                    <h5><?php echo $row->jenis_ruangan ?></h5>
                   </div>
                    <div class="col-md-12">
-                        <a data-toggle="tab" href="#<?php echo $row->nama_ruangan ?>"> <img src="assets/img/product.png" width="120"></a>
+
+                        <a data-toggle="tab" href="#<?php echo $row->nama_ruangan ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
                         <div class="col-md-12">
-							<a class="small mt" href="{{action('Obat@tambah')}}">Detail</a>
+							<a class="small mt" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
 						</div>
                   </div>
                 </div>

@@ -23,7 +23,7 @@ Route::get('update_pendaftaran', 'HomeController@update_pendaftaran');
 
 Route::get('pendaftaran','HomeController@daftar_pasien');
 
-Route::get('jenisRuangan', 'HomeController@tampil_jenis_ruangan');
+Route::get('jenisRuangan/{jenis_ruangan}', 'RuanganController@jenis_ruangan');
 
 // Route::get('aziz2', 'HomeController@update_pendaftaran');
 

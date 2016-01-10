@@ -115,9 +115,9 @@ class HomeController extends Controller
           public function tampil_jenis_ruangan(){
         return view('ruangan.view-jenisruangan');
     }
-     public function tampil_aziz(){
-        return view('ruangan.view-jenisruangan');
-    }
+    //  public function tampil_aziz(){
+    //     return view('ruangan.view-ruangan');
+    // }
     //  public function tampil_opi(){
     //     return view('ruangan.view-ruangan');
     // }
