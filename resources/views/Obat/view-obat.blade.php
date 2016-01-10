@@ -5,20 +5,20 @@
 <div class="col-lg-12">
    <div class="form-panel">
     <h4 class="mb">Data Pasien</h4>
-    <form class="form-horizontal style-form" method="get">
+    <form class="form-horizontal style-form" method="get" action="{{action('Obat@search')}}">
       <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">No Pendaftaran</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" name="no-pendaftaran">
         </div>
       </div>
 
       <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">Ruangan</label>
         <div class="col-sm-3">
-         <input type="text" class="form-control">
+         <input type="text" class="form-control" name="value">
          <br>
-         <button class="btn btn-primary">Cari</button>
+         <input type="submit" class="btn btn-primary" value="Cari">
         </div>
       </div>
       
@@ -28,7 +28,6 @@
            <input type="text" class="form-control">
        </div>
       </div>
-
     </form>
    </div>
 </div>
@@ -38,7 +37,7 @@
 <div class="col-lg-12">
    <div class="form-panel">
     <h4 class="mb">Form Penggunaan Obat</h4>
-    <form class="form-horizontal style-form" method="get">
+    <form class="form-horizontal style-form" method="post" action="{{action('Obat@tambah')}}">
       <div class="form-group">
        <div class="col-md-6">
         <label class="col-sm-4 col-sm-4 control-label">Tanggal</label>
@@ -55,22 +54,27 @@
       </div>
       </div>
       <div class="form-panel">
+        <p style="color:red">{{$errors->first('id_obat')}}</p>
+        <p style="color:red">{{$errors->first('nama_obat')}}</p>
+        <p style="color:red">{{$errors->first('rute_pemberian')}}</p>
        <div class="row">
         <div class="col-md-6">
          <div class="form-group">
+          <a href=""></a>
+          <input type="hidden" name="_token" value="<?= csrf_token(); ?>">          
+          <label>id Obat</label><br>
+          <input type="text" class="form-control" name="id_obat">
           <label>Nama Obat</label><br>
-          <input type="text" class="form-control" name="nm_obat">
+          <input type="text" class="form-control" name="nama_obat">         
           <label>Rute Pemberian</label><br>
           <input type="text" class="form-control" name="rute_pemberian">
           <label>Dosis</label><br>
           <input type="text" class="form-control" name="dosis"> 
-          <label>Keterangan</label> 
-          <input type="text" class="form-control" name="keterangan">
-          <label>Keterangan</label> 
-          <input type="text" class="form-control" name="keterangan">
+          <label>Harga</label> 
+          <input type="text" class="form-control" name="harga">
           
           <br>
-          <button type="button" class="btn btn-theme"><i class="fa fa-plus-circle"></i> | Tambahkan</button>
+          <input type="submit" class="btn btn-theme"><i class="fa fa-plus-circle"></i> | Tambahkan</button>
             
           </div>
          </div>
@@ -83,8 +87,8 @@
               <thead>
               <tr>
                <th>No</th>
-               <th>Rute</th>
-               <th>Harga</th>
+               <th>Nama Obat</th>
+               <th>Rute Pemberian</th>
                <th>Dosis</th>
                <th>Harga</th>
                <th>Aksi</th>
@@ -94,11 +98,10 @@
               <?php foreach ($data as $obats): ?>
                <tr>
                 <td><?=$obats->no ?></td>
-                <td>Rute</td>
-                <td>Harga</td>
-                <td>Dosis</td>
-                <td>Harga</td>
-                <td>Aksi</td>   
+                <td><?=$obats->nama_obat ?></td>
+                <td><?=$obats->rute_pemberian ?></td>
+                <td><?=$obats->dosis ?></td>
+                <td><?=$obats->harga ?></td>   
               </tr>
               <?php endforeach ?>
               </tbody>
