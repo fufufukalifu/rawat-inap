@@ -15,7 +15,7 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class RuanganController extends Controller
 {
      public function tampil_ruangan(){
-        $result = DB::table('ruangrawatinaps')->distinct()->get();
+        $result = DB::table('ruangrawatinaps')->select( DB::raw('DISTINCT(jenis_ruangan),keterangan') )->get();
         return view('ruangan.view-ruangan')->with('data', $result);
     }
 
