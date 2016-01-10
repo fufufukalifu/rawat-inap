@@ -5,6 +5,7 @@
 	<div class="row mt">
 		<div class="form-panel">
 			<h1 class="mb"><i class="fa fa-male"></i> Data Pasien</h1>
+				<form action="{{action('PasienController@tambahpasien')}}" method="post">
 						<div class="form-group">
 	                        <label class="control-label">No Pendaftaran</label>
 	                        <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
