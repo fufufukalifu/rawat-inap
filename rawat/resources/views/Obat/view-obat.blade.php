@@ -12,7 +12,18 @@
         <h4 class="modal-title">Hasil Pencarian</h4>
       </div>
       <div class="modal-body">
-        
+        <?php if (!isset($_GET["search"])){ ?>
+          <?php var_dump($data) ?>
+          <h3>Data Tidak Tersedia</h3>
+        <?php }else{  ?>
+          <form>
+            @foreach($data as $obats)
+            <div class="form-group">
+              <label class="control-label">Nama</label>
+              <input type="text" class="form-control" name="nama_pasien" value= "{{$obats->no}}" >
+            </div>
+            @endforeach
+        <?php } ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -43,7 +54,7 @@
         <div class="col-sm-3">
          <input type="text" class="form-control" name="value">
          <br>
-         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari">Cari</button>
+         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Cari</button>
         </div>
       </div>
       
