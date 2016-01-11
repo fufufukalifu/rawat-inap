@@ -11,8 +11,14 @@ use DB;
 class Obat extends Controller
 {
     public function tampil_penggunaan_obat(){
-        $result = DB::table('obats')->paginate(5);
-        return view('Obat.view-obat')->with('data', $result);
+        $data['obats'] = DB::table('obats')->get();
+        $search = \Request::get('key');
+        $data['pasiens'] = DB::table('pasiens')->get();
+        // $data['pasiens'] = DB::table('pasiens')
+        //             ->where('nama_pasien', 'like', "$search%")
+        //             ->get(); 
+
+        return view('Obat.view-obat')->with('data', $data);
     }
 
     public function tambah(Request $request) {
@@ -44,11 +50,11 @@ class Obat extends Controller
         }
     }
 
-    public function search(Request $request){
-        $search = \Request::get('search'); //<-- we use global request to get the param of URI 
+    public function search(Request $request, $key){
+        $search = \Request::get('key'); //<-- we use global request to get the param of URI 
         $pasiens = DB::table('pasiens')
                     ->where('nama_pasien', 'like', "$search%")
                     ->get();   
-        return view('Obat.view-hasil-pencarian-pasien',compact('pasiens'));
+        return $pasiens;
     }
 }

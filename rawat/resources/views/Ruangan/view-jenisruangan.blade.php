@@ -11,12 +11,12 @@
                     <h5><?php echo $row->nama_ruangan." ".$row->kelas_ruangan ?></h5>
                   </div>
                    <div class="col-md-12">
-
-                        <a data-toggle="tab" href="#<?php echo $row->no ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
-                        <div class="col-md-12">
-              <a class="small mt" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
-            </div>
-                  </div>
+                      <a data-toggle="tab" href="#<?php echo $row->no ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
+                        <br><br>
+                        <a href="<?php echo '../formPasien/' .$row->no ?>">
+                          <input class="btn btn-primary" type="submit" name="edit" value="Pilih">
+                        </a>
+                    </div>
                 </div>
           </div><!-- /col-md-4 -->
 
@@ -58,6 +58,7 @@
                 <div class="col-md-12 mb">
         <!-- menampilkan deskripsi dari kelas -->
                   <?php echo $row->keterangan ?>
+                  
                 
 
                 </div>

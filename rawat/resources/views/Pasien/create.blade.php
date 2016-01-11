@@ -11,6 +11,11 @@
 	                        <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
 	                        <input type="text" name="id_pasien" class="form-control">
 	                    </div>
+						
+						<div class="form-group">
+	                        <label class="control-label">Id Ruangan</label>
+	                        <input type="text" name="id_ruangan" class="form-control" value="<?php echo "$row->no"; ?>" >
+	                    </div>	                    
 
 	                    <div class="form-group">
 	                        <label class="control-label">Nama Pasien</label>

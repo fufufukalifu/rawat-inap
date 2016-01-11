@@ -12,7 +12,40 @@
         <h4 class="modal-title">Hasil Pencarian</h4>
       </div>
       <div class="modal-body">
-        
+            <table class="table">
+              <thead>
+              <tr>
+               <th>Id Pasien</th>
+               <th>Nama Pasien</th>
+               <th>Jenis Kelamin</th>
+               <th>Umur</th>
+               <th>Meritial Status</th>
+               <th>Aksi</th>
+              </tr>
+              </thead>
+              <tbody>
+              <?php foreach ($data['pasiens'] as $pasien): ?>
+               <tr>
+                <td><?=$pasien->id_pasien ?></td>
+                <td><?=$pasien->nama_pasien ?></td>
+                <td><?=$pasien->jenis_kelamin ?></td>
+                <td><?=$pasien->umur ?></td>
+                <td><?=$pasien->meritial_status ?></td>
+                <td><a href="" class="btn btn-primary" href="">Set</a></td>                  
+              </tr>
+              <?php endforeach ?>            
+              </tbody>
+            </table>
+        <?php if (!isset($_GET["search"])){ ?>
+        <?php }else{  ?>
+          <form>
+            @foreach($data as $obats)
+            <div class="form-group">
+              <label class="control-label">Nama</label>
+              <input type="text" class="form-control" name="nama_pasien" value= "{{$obats->no}}" >
+            </div>
+            @endforeach
+        <?php } ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -33,26 +66,27 @@
       <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">Cari</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" name="search" placeholder="Enter to search" id="onenter">
-            <button class="btn btn-primary" value="Cari" id="cari">cari</button>
+            <input type="text" class="form-control" name="key" placeholder="Enter to search" id="onenter"><br>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Set Pasien</button>
         </div>
       </div>
-
+<!-- 
       <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">Ruangan</label>
         <div class="col-sm-3">
          <input type="text" class="form-control" name="value">
          <br>
-         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari">Cari</button>
+         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Cari</button>
         </div>
-      </div>
-      
+       </div> -->
+          
       <div class="form-group">
        <label class="col-sm-2 col-sm-2 control-label">Nama Pasien</label>
        <div class="col-sm-8">
            <input type="text" class="form-control">
        </div>
       </div>
+      </div> 
     </form>
    </div>
 </div>
@@ -120,7 +154,7 @@
               </tr>
               </thead>
               <tbody>
-              <?php foreach ($data as $obats): ?>
+              <?php foreach ($data['obats'] as $obats): ?>
                <tr>
                 <td><?=$obats->no ?></td>
                 <td><?=$obats->nama_obat ?></td>
@@ -129,6 +163,8 @@
                 <td><?=$obats->harga ?></td>   
               </tr>
               <?php endforeach ?>
+              
+
               </tbody>
             </table>
           </div><! --/content-panel -->

@@ -22,6 +22,7 @@ class PasienController extends Controller
                 ->select('pasiens.*','ruangrawatinaps.*')
                 ->orderBy('pasiens.nama_pasien')
                 ->get();
+        $result = DB::table('pasiens')->orderBy('nama_pasien')->get();
         return view('pasien.index')->with('pasien', $result);
     }
 
@@ -110,8 +111,10 @@ class PasienController extends Controller
         //
     }
 
-     public function formPasien() {
-        return view('pasien.create');
+     public function formPasien($id) {
+        $row = DB::table('ruangrawatinaps')->where('no', $id)->first();
+        return view('pasien.create')->with('row', $row);
+        // return view('pasien.create');
     }
 
     public function tambahpasien(Request $request) {
@@ -134,7 +137,9 @@ class PasienController extends Controller
                 'pekerjaan' => 'required',
                 'nama_penanggungjawab' => 'required',
                 'alamat_penanggungjawab' => 'required',
-                'nama_pasangan' => 'required'
+                'nama_pasangan' => 'required',               
+                'id_ruangan' => 'required'
+                // 'no' => 'required'
             ]);
         if ($v->fails()) {
             return redirect()->back()->withErrors($v->errors());
@@ -156,7 +161,8 @@ class PasienController extends Controller
                     'pekerjaan' => $post['pekerjaan'],
                     'nama_penanggungjawab' => $post['nama_penanggungjawab'],
                     'alamat_penanggungjawab' => $post['alamat_penanggungjawab'],
-                    'nama_pasangan' => $post['nama_pasangan']
+                    'nama_pasangan' => $post['nama_pasangan'],
+                    'id_ruangan' => $post['id_ruangan']
                 );
             $i = DB::table('pasiens')->insert($data);
             if ($i > 0 ) {

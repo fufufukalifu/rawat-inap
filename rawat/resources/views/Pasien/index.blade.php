@@ -128,9 +128,7 @@
 			<?php } ?>
 		</table>
 		</div>
-		<a href="<?php echo 'formPasien' ?>">
-			<input class="btn btn-primary" type="submit" name="delete" value="Tambah">
-		</a>
+		
 	</div>
 </div>
 @endsection

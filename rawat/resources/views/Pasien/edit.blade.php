@@ -16,6 +16,10 @@
 	                    <input class="form-control"type="text" name="nama_pasien" value="<?= $row->nama_pasien ?>" class="form-control">
 	                </div>
 	                <div class="form-group">
+	                        <label class="control-label">Id Ruangan</label>
+	                        <input type="text" name="id_ruangan" class="form-control" value="<?php echo "$row->id_ruangan"; ?>" >
+	                </div>
+	                <div class="form-group">
 	                    <label class="control-label">Nama panggilan</label>
 	                    <input class="form-control"type="text" name="nama_panggilan" value="<?= $row->nama_panggilan ?>" class="form-control">
 	                </div>
