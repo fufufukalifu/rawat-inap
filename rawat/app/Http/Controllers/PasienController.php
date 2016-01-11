@@ -17,7 +17,11 @@ class PasienController extends Controller
      */
     public function index()
     {
-        $result = DB::table('pasiens')->get();
+        $result = DB::table('pasiens')
+                ->join('ruangrawatinaps', 'pasiens.id_ruangan', '=', 'ruangrawatinaps.no')
+                ->select('pasiens.*','ruangrawatinaps.*')
+                ->orderBy('pasiens.nama_pasien')
+                ->get();
         return view('pasien.index')->with('pasien', $result);
     }
 
@@ -27,6 +31,15 @@ class PasienController extends Controller
                     ->where('nama_pasien', 'like', "%$search%")
                     ->get();   
         return view('pasien.index',compact('pasiens'));
+    }
+    public function tampilpasien($id) {
+        $row = DB::table('pasiens')
+                ->where('id_pasien', $id)
+                ->join('ruangrawatinaps', 'pasiens.id_ruangan', '=', 'ruangrawatinaps.no')
+                ->select('pasiens.*','ruangrawatinaps.*')
+                ->orderBy('pasiens.nama_pasien')
+                ->first();
+        return view('pasien.show')->with('row', $row);
     }
 
 

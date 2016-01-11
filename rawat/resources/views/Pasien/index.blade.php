@@ -38,29 +38,36 @@
 				<?php if (!isset($_GET["search"])){ ?>
 					<h3>Data Tidak Tersedia</h3>
 				<?php }else{  ?>
-					<form>
+					<!-- <form> -->
 						@foreach($pasiens as $data)
 						<div class="form-group">
-							<label class="control-label">Nama</label>
-							<input type="text" class="form-control" name="nama_pasien" value= "{{$data->nama_pasien}}" >
+							<label class="control-label">No Pendaftaran</label>
+							<input type="text" class="form-control" name="nama_pasien" value= "{{$data->id_pasien}}" disabled >
 						</div>
 
 						<div class="form-group">
-							<label class="control-label">Umur</label>
-							<input type="text" class="form-control" name="nama_pasien" value= "{{$data->umur}}" >
+							<label class="control-label">Id Ruangan</label>
+							<input type="text" class="form-control" name="nama_pasien" value= "{{$data->id_ruangan}}" disabled>
+						</div>
+							
+						<div class="form-group">
+							<label class="control-label">Nama Pasien</label>
+							<input type="text" class="form-control" name="nama_pasien" value= "{{$data->nama_pasien}}" disabled>
 						</div>
 
 						<div class="form-group">
-							<label class="control-label">Alamat</label>
-							<input type="text" class="form-control" name="nama_pasien" value= "{{$data->alamat}}" >
+							<label class="control-label">Nama Panggilan</label>
+							<input type="text" class="form-control" name="nama_pasien" value= "{{$data->nama_panggilan}}" disabled>
 						</div>
 
 						<div class="form-group">
-							<input type="submit" class="btn btn-primary" name="detail" value= "Detail" >
+							<a href="<?php echo 'tampilpasien/' .$data->id_pasien ?>">
+								<input class="btn btn-primary" type="submit" name="edit" value="Detail">
+							</a>
 						</div>
 						<hr>
 						@endforeach
-					</form>
+					<!-- </form> -->
 				<?php } ?>
 			</div>
 	    </div>
@@ -75,26 +82,22 @@
 		<div class="table-responsive">
 		<table class="table table-striped table-bordered" >
 			<tr>
-				<td>Identitas</td>
-				<td>Nama</td>
-				<td>Jenis Kelamin</td>
-				<td>Umur</td>
-				<td>Agama</td>
-				<td>Pekerjaan</td>
-				<td>Status</td>
-
-
+				<th>No Pendaftaran</th>
+				<th>Id Ruangan</th>
+				<th>Nama Pasien</th>
+				<th>Umur</th>
+				<th>Penanggung Jawab</th>
+				<th>Status</th>
 			</tr>
 			
 			<?php  	if (!isset($_GET["search"])){?>
 			@foreach($pasien as $data)
-			<tr>
+			<tr >
 			    <td>{{$data->id_pasien}}</td>
+			    <td>{{$data->id_ruangan}}</td>
 				<td>{{$data->nama_pasien}}</td>
-				<td>{{$data->jenis_kelamin}}</td>
 				<td>{{$data->umur}}</td>
-				<td>{{$data->agama}}</td>
-				<td>{{$data->pekerjaan}}</td>
+				<td>{{$data->nama_penanggungjawab}}</td>
 				<td>
 					<a href="<?php echo 'UbahPasien/' .$data->id_pasien ?>">
 						<input class="btn btn-primary" type="submit" name="edit" value="Edit">
@@ -108,11 +111,10 @@
 			@foreach($pasiens as $data)
 			<tr>
 			    <td>{{$data->id_pasien}}</td>
+			    <td>{{$data->id_ruangan}}</td>
 				<td>{{$data->nama_pasien}}</td>
-				<td>{{$data->jenis_kelamin}}</td>
 				<td>{{$data->umur}}</td>
-				<td>{{$data->agama}}</td>
-				<td>{{$data->pekerjaan}}</td>
+				<td>{{$data->nama_penanggungjawab}}</td>
 				<td>
 					<a href="<?php echo 'UbahPasien/' .$data->id_pasien ?>">
 						<input class="btn btn-primary" type="submit" name="edit" value="Edit">

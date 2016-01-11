@@ -1,92 +1,121 @@
-@extends('layouts.main')
-@section('content')
 
-<div class="col-md-7">
-	<div class="row mt">
-		<div class="form-panel">
-			<h2 class="mb"><i class="fa fa-male"></i> Daftar Pasien</h2>
-				<div class="form-group">
-				    {!! Form::label('id_pasien', 'ID:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('id_pasien', $pasien->id_pasien, ['class' => 'form-control']) !!}
-				</div>
+ @extends('layouts.main')
+ @section('content')
 
-				<div class="form-group">
-				    {!! Form::label('nama_pasien', 'Nama:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('nama_pasien', $pasien->nama_pasien, ['class' => 'form-control']) !!}
-				</div>
+ <div class="col-md-7">
+ 	<div class="row mt">
+ 		<div class="form-panel">
+ 			<h1 class="mb"><i class="fa fa-male"></i> Data Pasien</h1>
+				<form action="" method="post">
+					<div class="form-group">
+	                   	<input type="hidden" name="_token" value="<?= csrf_token(); ?>">
+	                    <input type="hidden" name="id_pasien" value="<?= $row->id_pasien ?>">
+                    </div>
+	                <div class="form-group">
+	                    <label class="control-label">Nama Pasien</label>
+	                    <input class="form-control"type="text" name="nama_pasien" value="<?= $row->nama_pasien ?>" class="form-control">
+	                </div>
+	                <div class="form-group">
+	                    <label class="control-label">Nama panggilan</label>
+	                    <input class="form-control"type="text" name="nama_panggilan" value="<?= $row->nama_panggilan ?>" class="form-control">
+	                </div>
 
-				<div class="form-group">
-				    {!! Form::label('nama_panggilan', 'Panggilan:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('nama_panggilan', $pasien->nama_panggilan, ['class' => 'form-control']) !!}
-				</div>
+	                <div class="form-group">
+                       	<label class="control-label">Jenis Kelamin</label><br>
+ 						<input type="text" class="form-control" name="jenis_kelamin" value="<?= $row->jenis_kelamin ?>">
+					</div>
 
-				<div class="form-group">
-				    {!! Form::label('jenis_kelamin', 'Kelamin:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('jenis_kelamin', $pasien->jenis_kelamin, ['class' => 'form-control']) !!}
-				</div>
+	                <div class="form-group">
+	                    <label class="control-label">Tempat Lahir</label>
+	                    <input type="text" class="form-control" name="tempat_lahir" value="<?= $row->tempat_lahir ?>">
+	                </div>
+	                <div class="form-group">
+	                        <label class="control-label">Tanggal Lahir</label>
+	                        <input type="date" name="tanggal_lahir" class="form-control" min="1900-01-02" max="2020-12-31" value="<?= $row->tanggal_lahir ?>">
+	                </div>
 
-				<div class="form-group">
-				    {!! Form::label('tempat_lahir', 'Tmp lhir:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('tempat_lahir', $pasien->tempat_lahir, ['class' => 'form-control']) !!}
-				</div>
+	                <div class="form-group">
+	                    <label class="control-label">Umur</label>
+	                    <input type="number" name="umur" class="form-control"  min="1" max="100" value="<?= $row->umur ?>">
+	                </div>
+ 					<hr>
 
-				<div class="form-group">
-				    {!! Form::label('tanggal_lahir', 'Lahir:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('tanggal_lahir', $pasien->tanggal_lahir, ['class' => 'form-control']) !!}
-				</div>
+ 					<div class="form-group">
+	                    <label class="control-label">Id Ruangan</label>
+	                    <input type="text" class="form-control" name="id_ruangan" value="<?= $row->id_ruangan ?>">
+	                </div>
+	                <div class="form-group">
+	                        <label class="control-label">Nama Ruangan</label>
+	                        <input type="text" name="nama_ruangan" class="form-control"  value="<?= $row->nama_ruangan ?>">
+	                </div>
 
-				<div class="form-group">
-				    {!! Form::label('umur', 'Umur:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('umur', $pasien->umur, ['class' => 'form-control']) !!}
-				</div>
+	                <div class="form-group">
+	                    <label class="control-label">Jenis Ruangan</label>
+	                    <input type="text" name="jenis_ruangan" class="form-control" value="<?= $row->jenis_ruangan ?>">
+	                </div>
+ 					<hr>
 
-				<div class="form-group">
-				    {!! Form::label('kecamatan', 'Keceamatan:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('kecamatan', $pasien->kecamatan, ['class' => 'form-control']) !!}
-				</div>
+		 			<div class="form-group">
+                        <label class="control-label">Kecamatan</label>
+                       	<input class="form-control" type="text" name="kecamatan" value="<?= $row->kecamatan?>">
+	                </div>
 
-				<div class="form-group">
-				    {!! Form::label('kelurahan', 'Panggilan:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('kelurahan', $pasien->kelurahan, ['class' => 'form-control']) !!}
-				</div>
+                   	<div class="form-group">
+                       	<label class="control-label">Kelurahan</label>
+                       	<input class="form-control" type="text" name="kelurahan" value="<?= $row->kelurahan ?>">
+                   	</div>
 
-				<div class="form-group">
-				    {!! Form::label('alamat', 'Alamat:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('alamat', $pasien->alamat, ['class' => 'form-control']) !!}
-				</div>
+                   	<div class="form-group">
+                       	<label class="control-label">Alamat RT/RW</label>
+                       	<input class="form-control" type="text" name="alamat" value="<?= $row->alamat ?>">
+                   	</div>
+	               	<div class="form-group">
+                       	<label class="control-label">No Telp</label>
+                       	<input class="form-control" type="number" name="telepon" value="<?= $row->telepon ?>" >
+                   	</div>
+	               	<hr>
 
-				<div class="form-group">
-				    {!! Form::label('telepon', 'Tlp:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('telepon', $pasien->telepon, ['class' => 'form-control']) !!}
-				</div>
+	               	<div class="form-group">
+	                   	<label class="control-label">Status</label>
+	                 	<input class="form-control" type="text" name="meritial_status"  value="<?= $row->meritial_status ?>">
+	               	</div>
+	               	<div class="form-group">
+	                   	<label class="control-label">Agama</label>
+	                   	<input class="form-control" type="text" name="agama"  value="<?= $row->agama?>">
+	                </div>
+	                <div class="form-group">
+                        <label class="control-label">Pekerjaan</label>
+                        <input class="form-control" type="text" name="pekerjaan" value="<?= $row->pekerjaan ?>">
+                    </div>
+	                <hr>
 
-				<div class="form-group">
-				    {!! Form::label('meritial_status', 'Status:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('meritial_status', $pasien->meritial_status, ['class' => 'form-control']) !!}
-				</div>
+	                <div class="form-group">
+                        <label class="control-label">Nama Ibu/Bapak</label>
+                        <input class="form-control" type="text" name="nama_penanggungjawab" value="<?= $row->nama_penanggungjawab ?>">
+                    </div>
 
-				<div class="form-group">
-				    {!! Form::label('agama', 'agama:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('agama', $pasien->agama, ['class' => 'form-control']) !!}
-				</div>
+	                <div class="form-group">
+	                    <label class="control-label">Alamat</label>
+	                    <input type="text" class="form-control" name="alamat_penanggungjawab" value="<?= $row->alamat_penanggungjawab ?>">
+	                </div>
 
-				<div class="form-group">
-				    {!! Form::label('pekerjaan', 'pekerjaan:', ['class' => 'control-label']) !!}
-			    	{!! Form::text('pekerjaan', $pasien->pekerjaan, ['class' => 'form-control']) !!}
-				</div>
+	                <div class="form-group">
+	                    <label class="control-label">Nama Suami/Istri</label>
+	                    <input type="text" class="form-control" name="nama_pasangan" value="<?= $row->nama_pasangan ?>">
+	                </div>
+
+                </form>
+                    <div class="row mt">
+                     	<div class="col-sm-2 text-center">
+	                        <a href="../pasien">
+          						<input type="submit" value="Kembali" class="btn btn-primary">
+          					</a>
+          				</div>
+          					
+          			</div>
+ 		</div>
+ 	</div>
+ </div>
 
 
-				<div class="form-group">
-				   <a href="pasien"> 
-				   		{!! Form::submit('Back', ['class' => 'btn btn-primary']) !!}
-					</a>
-				</div>
-
-
-		
-		</div>
-	</div>
-</div>
-
-
-@stop
+ @endsection

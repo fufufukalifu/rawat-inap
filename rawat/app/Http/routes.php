@@ -47,6 +47,8 @@ Route::get('DeletePasien/{id}', 'PasienController@delete');
 Route::get('UbahPasien/{id}', 'PasienController@edits');
 Route::get('search', 'PasienController@search');
 
+Route::get('tampilpasien/{id}', 'PasienController@tampilpasien');
+
 // Route::get('didik2', 'HomeController@update_pendaftaran');
 
 Route::get('form', 'PendaftaranController@form');
