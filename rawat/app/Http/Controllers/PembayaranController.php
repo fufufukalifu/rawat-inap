@@ -27,10 +27,13 @@ class PembayaranController extends Controller
         $search = \Request::get('nama_pasien'); //<-- we use global request to get the param of URI 
         $pasiens = DB::table('pasiens')
         			->join('ruangrawatinaps', 'pasiens.id_ruangan', '=', 'ruangrawatinaps.no')
-        			->join('rekapobats', 'pasiens.no', '=', 'rekapobats.no')
-                	->select('pasiens.*','ruangrawatinaps.*','rekapobats.*')
+                	->select('pasiens.*','ruangrawatinaps.*')
                     ->where('nama_pasien', 'like', "%$search%")
                     ->get();   
         return view('pembayaran.form-pembayaran',compact('pasiens'));
     }
+
+	 
+
+
 }

@@ -69,7 +69,6 @@
             <?php if (!isset($_GET["tampil"])){ ?>
               
             <?php }else{  ?>
-              <form>
                 @foreach($pasiens as $data)
                   <div class="col-md-6">
                      <div class="form-group">
@@ -104,6 +103,8 @@
                       </div>
                     </div>
                   </div>
+                  @endforeach
+
                    <div class="col-md-6">
                      <div class="col-md-12">
                       <div class="content-panel">
@@ -113,6 +114,7 @@
                           <tbody>
                             <tr>
                               <td>Biaya Ruangan:</td>
+                              @foreach($pasiens as $data)
                               <td>
                                   <?php 
                                     $harga = $data->harga;
@@ -121,39 +123,45 @@
 
                                    ?>
                               </td>
+                              @endforeach
                             </tr>
                             <tr>
                               <td>Obat:</td>
                               <td>Belum</td>
                             </tr>
+                            @foreach($pasiens as $data)
                             <tr>
                               <td>Lain-lain:</td>
-                              <td>Belum</td>
+                              <td>
+                                <?php 
+                                  $hargaobat = 500000;
+
+                                 ?>
+                              </td>
                             </tr>
                             <tr>
                               <td>Total:</td>
-                              <td>Belum</td>
+                              <td>
+                                  <?php 
+                                    $total = $hargaruangan + $hargaobat;
+                                    echo "$total";
+
+                                   ?>
+
+                              </td>
                             </tr>
+                            @endforeach
                           </tbody>
                           
                         </table>
                       </div>
-                      <br>
-                      Jumlah Record : Sekian
-                      <br>
                       <button type="button" class="btn btn-theme"><i class="fa fa-save"></i> | Detail</button>
                         <button type="button" class="btn btn-theme"><i class="fa fa-file"></i> | Bayar</button>
                         <button type="button" class="btn btn-theme"><i class="fa fa-list-alt"></i> | Cetak</button>
 
                      </div>
                    </div>
-
-
-
-
                 <hr>
-                @endforeach
-              </form>
             <?php } ?>
 
 
