@@ -12,12 +12,10 @@ class Obat extends Controller
 {
     public function tampil_penggunaan_obat(){
         $data['obats'] = DB::table('obats')->get();
-        $search = \Request::get('key');
-        $data['pasiens'] = DB::table('pasiens')->get();
+        $data['pasiens'] = DB::table('pasiens')->take(1)->get();
         // $data['pasiens'] = DB::table('pasiens')
         //             ->where('nama_pasien', 'like', "$search%")
         //             ->get(); 
-
         return view('Obat.view-obat')->with('data', $data);
     }
 
@@ -50,11 +48,26 @@ class Obat extends Controller
         }
     }
 
-    public function search(Request $request, $key){
-        $search = \Request::get('key'); //<-- we use global request to get the param of URI 
-        $pasiens = DB::table('pasiens')
-                    ->where('nama_pasien', 'like', "$search%")
+    // public function search(Request $request, $key){
+    //     $search = \Request::get('key'); //<-- we use global request to get the param of URI 
+    //     $pasiens = DB::table('pasiens')
+    //                 ->where('nama_pasien', 'like', "$search%")
+    //                 ->get();   
+    //     return $pasiens;
+    // }
+    public function search(Request $request){
+        //fungsi untuk mencaridata pasien
+
+        $post   = $request->all();//<-- we use global request to get the param of URI 
+         $data['pasiens'] = DB::table('pasiens')
+                    ->where('id_pasien', $post['key'])
                     ->get();   
-        return $pasiens;
+        //untuk menampilkan data obat
+
+        $data['obats'] = DB::table('obats')->get();
+        $search = \Request::get('key');
+
+        return view('Obat.view-obat')->with('data', $data);
+        
     }
 }
