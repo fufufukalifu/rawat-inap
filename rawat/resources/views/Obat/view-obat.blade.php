@@ -36,6 +36,16 @@
               <?php endforeach ?>            
               </tbody>
             </table>
+        <?php if (!isset($_GET["search"])){ ?>
+        <?php }else{  ?>
+          <form>
+            @foreach($data as $obats)
+            <div class="form-group">
+              <label class="control-label">Nama</label>
+              <input type="text" class="form-control" name="nama_pasien" value= "{{$obats->no}}" >
+            </div>
+            @endforeach
+        <?php } ?>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -60,23 +70,23 @@
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Set Pasien</button>
         </div>
       </div>
-
+<!-- 
       <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">Ruangan</label>
         <div class="col-sm-3">
          <input type="text" class="form-control" name="value">
          <br>
-         <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Cari</button>
-         -->
-       </div>
-      </div>
-      
+         <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Cari</button>
+        </div>
+       </div> -->
+          
       <div class="form-group">
        <label class="col-sm-2 col-sm-2 control-label">Nama Pasien</label>
        <div class="col-sm-8">
            <input type="text" class="form-control">
        </div>
       </div>
+      </div> 
     </form>
    </div>
 </div>

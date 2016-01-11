@@ -14,7 +14,6 @@
 
                         <a data-toggle="tab" href="#<?php echo $row->no ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
                         <div class="col-md-12">
-              <a class="small mt" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
             </div>
                   </div>
                 </div>
