@@ -2,58 +2,8 @@
 @section('content')
 
 <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Hasil Pencarian</h4>
-      </div>
-      <div class="modal-body">
-            <table class="table">
-              <thead>
-              <tr>
-               <th>Id Pasien</th>
-               <th>Nama Pasien</th>
-               <th>Jenis Kelamin</th>
-               <th>Umur</th>
-               <th>Meritial Status</th>
-               <th>Aksi</th>
-              </tr>
-              </thead>
-              <tbody>
-              <?php foreach ($data['pasiens'] as $pasien): ?>
-               <tr>
-                <td><?=$pasien->id_pasien ?></td>
-                <td><?=$pasien->nama_pasien ?></td>
-                <td><?=$pasien->jenis_kelamin ?></td>
-                <td><?=$pasien->umur ?></td>
-                <td><?=$pasien->meritial_status ?></td>
-                <td><a href="" class="btn btn-primary" href="">Set</a></td>                  
-              </tr>
-              <?php endforeach ?>            
-              </tbody>
-            </table>
-        <?php if (!isset($_GET["search"])){ ?>
-        <?php }else{  ?>
-          <form>
-            @foreach($data as $obats)
-            <div class="form-group">
-              <label class="control-label">Nama</label>
-              <input type="text" class="form-control" name="nama_pasien" value= "{{$obats->no}}" >
-            </div>
-            @endforeach
-        <?php } ?>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
-  </div>
-</div>
 
 <div class="row mt">
   <h1>Coba</h1>
@@ -62,12 +12,15 @@
    <div class="form-panel">
     <h4 class="mb">Data Pasien</h4>
     <!-- <form class="form-horizontal style-form" method="get" action="{{action('Obat@search')}}">-->
-    <form class="form-horizontal style-form" method="get" action="">
+    <form class="form-horizontal style-form" method="post" action="{{action('Obat@search')}}">
       <div class="form-group">
+
         <label class="col-sm-2 col-sm-2 control-label">Cari</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" name="key" placeholder="Enter to search" id="onenter"><br>
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Set Pasien</button>
+             <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
+            <input type="text" class="form-control" name="key" placeholder="Enter to search"><br>
+            <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Set Pasien</button> -->
+            <button type="submit" class="btn btn-info">Cari</button>
         </div>
       </div>
 <!-- 
@@ -81,9 +34,33 @@
        </div> -->
           
       <div class="form-group">
-       <label class="col-sm-2 col-sm-2 control-label">Nama Pasien</label>
-       <div class="col-sm-8">
-           <input type="text" class="form-control">
+      <div class="container">  
+          <?php 
+            if (!empty($data['pasiens'])) {
+            ?>
+
+            <?php foreach ($data['pasiens'] as $pasien):?>
+               <div class="col-sm-5">
+                    <label class="col-sm-12 col-sm-12 control-label">Id Pasien</label> <br>
+                    <input type="text" value="<?=$pasien->id_pasien ?>" disabled="true" class="form-control">
+                  </div>
+                  <div class="col-sm-5">
+                    <label class="col-sm-12 col-sm-12 control-label">Nama Pasien</label>
+                    <input type="text" value="<?=$pasien->nama_pasien ?>" disabled="true" class="form-control">
+                  </div>  
+
+           <?php endforeach ?> 
+             
+            <?php
+            } else {
+            ?>
+             
+             <h3>Data Pasien Tidak Ditemukan!</h3>
+
+            <?php
+            }
+            ?>
+            
        </div>
       </div>
       </div> 
