@@ -138,7 +138,8 @@ class PasienController extends Controller
                 'nama_penanggungjawab' => 'required',
                 'alamat_penanggungjawab' => 'required',
                 'nama_pasangan' => 'required',               
-                'id_ruangan' => 'required'
+                'id_ruangan' => 'required',
+                'tanggal_masuk' => 'required'
                 // 'no' => 'required'
             ]);
         if ($v->fails()) {
@@ -162,7 +163,8 @@ class PasienController extends Controller
                     'nama_penanggungjawab' => $post['nama_penanggungjawab'],
                     'alamat_penanggungjawab' => $post['alamat_penanggungjawab'],
                     'nama_pasangan' => $post['nama_pasangan'],
-                    'id_ruangan' => $post['id_ruangan']
+                    'id_ruangan' => $post['id_ruangan'],
+                    'tanggal_masuk' => $post['tanggal_masuk']
                 );
             $i = DB::table('pasiens')->insert($data);
             if ($i > 0 ) {

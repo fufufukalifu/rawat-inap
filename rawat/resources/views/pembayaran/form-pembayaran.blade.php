@@ -126,15 +126,20 @@
                               @endforeach
                             </tr>
                             <tr>
-                              <td>Obat:</td>
-                              <td>Belum</td>
+                              <td>Obat</td>
+                              <td>
+                                <?php 
+                                  $hargaobat = 300000;
+                                 ?>
+                              </td>          
+                              
                             </tr>
                             @foreach($pasiens as $data)
                             <tr>
                               <td>Lain-lain:</td>
                               <td>
                                 <?php 
-                                  $hargaobat = 500000;
+                                  $hargalain = 10000;
 
                                  ?>
                               </td>
@@ -143,7 +148,7 @@
                               <td>Total:</td>
                               <td>
                                   <?php 
-                                    $total = $hargaruangan + $hargaobat;
+                                    $total = $hargaruangan + $hargaobat + $hargalain;
                                     echo "$total";
 
                                    ?>

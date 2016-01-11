@@ -10,6 +10,7 @@
 	                        <label class="control-label">No Pendaftaran</label>
 	                        <input type="hidden" name="_token" value="<?= csrf_token(); ?>">
 	                        <input type="text" name="id_pasien" class="form-control">
+	                        <input type="hidden" name="tanggal_masuk" class="form-control" value="<?php echo date('d-m-Y'); ?>">
 	                    </div>
 						
 						<div class="form-group">
