@@ -121,13 +121,17 @@ class HomeController extends Controller
     //  public function tampil_opi(){
     //     return view('ruangan.view-ruangan');
     // }
-    // public function tampil_opi(){
-    //     return view('ruangan.view-ruangan');
-    // }
+    public function form_pembayaran(){
+        return view('Pembayaran.form-pembayaran');
+    }
     // public function anggi(){
     //     return view('ruangan.view-ruangan');
     // }
     // public function anggi2(){
     //     return view('ruangan.view-ruangan');
     // }
+
+     public function detail_pembayaran(){
+        return view('Pembayaran.detail-pembayaran');
+    }
 }

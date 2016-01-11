@@ -24,7 +24,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Email</label>
 							<div class="col-md-6">
-								<input type="email" name="email" value="">
+								<input type="email" class="form-control" name="email" value="">
 							</div>
 						</div>
 
@@ -51,7 +51,7 @@
 
 								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
 							</div>
-						</div>
+						</div> 
 					</form>
 				</div>
 			</div>

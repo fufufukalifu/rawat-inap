@@ -33,8 +33,7 @@ Route::post('tambahObat', 'Obat@tambah');
 
 // Route::get('auth/login', 'Auth\AuthController@getLogin');
 
-// Route::get('Enur', 'HomeController@update_pendaftaran');
-
+Route::get('pembayaran', 'HomeController@form_pembayaran');
 // Route::get('anggi', 'HomeController@update_pendaftaran');
 
 // Route::get('anggi', 'HomeController@update_pendaftaran');
@@ -70,6 +69,8 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::get('Detailpembayaran', 'HomeController@detail_pembayaran');
 
 
 
