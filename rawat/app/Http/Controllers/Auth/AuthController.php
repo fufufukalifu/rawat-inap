@@ -66,5 +66,5 @@ class AuthController extends Controller
 
     protected $loginPath = '/auth/login';
 
-   
+   // protected http_redirect('/ruangan');
 }

@@ -66,7 +66,7 @@
      </li>
      <li class="mt margin0"><hr></li>
      <li class="mt margin0">
-      <a href=""><i class="fa fa-credit-card"></i>
+      <a href="{{url("/pembayaran")}}"><i class="fa fa-credit-card"></i>
        <span>Pembayaran</span>
       </a>
      </li>

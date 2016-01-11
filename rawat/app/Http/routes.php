@@ -33,7 +33,9 @@ Route::post('tambahObat', 'Obat@tambah');
 
 // Route::get('auth/login', 'Auth\AuthController@getLogin');
 
-Route::get('pembayaran', 'HomeController@form_pembayaran');
+Route::get('pembayaran', 'PembayaranController@index');
+Route::get('searchpembayaran', 'PembayaranController@searchpembayaran');
+Route::get('searchpembayarantampil','PembayaranController@searchpembayarantampil');
 // Route::get('anggi', 'HomeController@update_pendaftaran');
 
 // Route::get('anggi', 'HomeController@update_pendaftaran');
