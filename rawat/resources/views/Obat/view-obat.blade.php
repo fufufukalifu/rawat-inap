@@ -12,18 +12,30 @@
         <h4 class="modal-title">Hasil Pencarian</h4>
       </div>
       <div class="modal-body">
-        <?php if (!isset($_GET["search"])){ ?>
-          <?php var_dump($data['pasiens']) ?>
-          <h3>Data Tidak Tersedia</h3>
-        <?php }else{  ?>
-          <form>
-            @foreach($data as $obats)
-            <div class="form-group">
-              <label class="control-label">Nama</label>
-              <input type="text" class="form-control" name="nama_pasien" value= "{{$obats->no}}" >
-            </div>
-            @endforeach
-        <?php } ?>
+            <table class="table">
+              <thead>
+              <tr>
+               <th>Id Pasien</th>
+               <th>Nama Pasien</th>
+               <th>Jenis Kelamin</th>
+               <th>Umur</th>
+               <th>Meritial Status</th>
+               <th>Aksi</th>
+              </tr>
+              </thead>
+              <tbody>
+              <?php foreach ($data['pasiens'] as $pasien): ?>
+               <tr>
+                <td><?=$pasien->id_pasien ?></td>
+                <td><?=$pasien->nama_pasien ?></td>
+                <td><?=$pasien->jenis_kelamin ?></td>
+                <td><?=$pasien->umur ?></td>
+                <td><?=$pasien->meritial_status ?></td>
+                <td><a href="" class="btn btn-primary" href="">Set</a></td>                  
+              </tr>
+              <?php endforeach ?>            
+              </tbody>
+            </table>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -55,7 +67,8 @@
          <input type="text" class="form-control" name="value">
          <br>
          <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Cari</button>
-         --></div>
+         -->
+       </div>
       </div>
       
       <div class="form-group">

@@ -13,10 +13,10 @@ class Obat extends Controller
     public function tampil_penggunaan_obat(){
         $data['obats'] = DB::table('obats')->get();
         $search = \Request::get('key');
-        // $data['pasiens'] = DB::table('pasiens')->get();
-        $data['pasiens'] = DB::table('pasiens')
-                    ->where('nama_pasien', 'like', "$search%")
-                    ->get(); 
+        $data['pasiens'] = DB::table('pasiens')->get();
+        // $data['pasiens'] = DB::table('pasiens')
+        //             ->where('nama_pasien', 'like', "$search%")
+        //             ->get(); 
 
         return view('Obat.view-obat')->with('data', $data);
     }
