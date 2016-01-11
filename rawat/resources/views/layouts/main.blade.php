@@ -42,15 +42,19 @@
     </ul>
    </div>
    </header>
-  
+
+   
 
   <aside>
    <div id="sidebar"  class="nav-collapse ">
-    
     <ul class="sidebar-menu" id="nav-accordion">
      <p class="centered">
       <a href="profile.html">
-      <img src="{{ asset("assets/img/ui-sam.jpg") }}" class="img-circle" width="60"></a>
+      <img src="{{ asset("assets/img/ui-sam.jpg") }}" class="img-circle" width="60"></a><br><br>
+      <span class="mt margin0">
+        Suster
+
+      </span>
      </p>
 
      <li class="mt margin0">

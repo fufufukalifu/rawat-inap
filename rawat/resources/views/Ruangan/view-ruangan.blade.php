@@ -2,17 +2,18 @@
 @section('content')
 
 <div class="container">
+  <br>
       <?php 
         foreach ($data as $row) {
       ?>
-           <div class="col-md-3 col-sm-4 mb">
+           <div class="col-md-3 mb">
                 <div class="darkblue-panel pn">
                   <div class="darkblue-header">
                     <h5><?php echo $row->jenis_ruangan ?></h5>
                   </div>
-                   <div class="col-md-12">
-                        <div class="col-md-12">
-                        <a data-toggle="tab" href="#<?php echo $row->jenis_ruangan ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
+                   <div class="col-md-13">
+                        <div class="col-md-13">
+                        <a data-toggle="tab" href="#<?php echo $row->jenis_ruangan ?>"> <img src="{{ asset("/assets/img/ruangan/$row->jenis_ruangan.png") }}" width="190"></a>
                        
                          <br><br>
                         
@@ -30,18 +31,15 @@
 	  <div id="home ?>" class="tab-pane  fade in active">
       <div class="col-md-12 mb">
               <!-- WHITE PANEL - TOP USER -->
-              <div class="grey-panel pn">
+              <div class="content-panel pn">
                 <div class="col-md-2 grey-header">             
                   <h5>Deskripsi Umum</h5>       
                 </div>
                 <div class="col-md-12 mb">
-				 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
+                  
+                  <h4>  
+                    Banyak pilihan kamar yang dapat anda pilih . pilihlah kamar yang nyaman dan agar kondisi pasien cepat sembuh
+                  </h4> 
                 </div>
               </div>
             </div><!-- /col-md-4 -->
@@ -51,21 +49,27 @@
       ?>
 
 	  <div id="<?php echo $row->jenis_ruangan ?>" class="tab-pane fade">
-      <div class="col-md-12 mb">
-              <!-- WHITE PANEL - TOP USER -->
-              <div class="grey-panel pn">
-                <div class="col-md-2 grey-header">             
-                  <h5><?php echo $row->jenis_ruangan ?></h5>       
-                </div>
-                <div class="col-md-12 mb">
-				<!-- menampilkan deskripsi dari kelas -->
-                  <?php echo $row->keterangan ?>
-                
-
-                </div>
-              </div>
-            </div><!-- /col-md-4 -->
-   	 </div>
+      <div class="col-md-11">
+        <div class="form-group">
+          <div class="content-panel">
+            <h4><i class="fa fa-angle-center"></i><?php echo $row->jenis_ruangan ?></h4>
+            <hr>
+            <table class="table">         
+            <tbody>
+              <tr>
+                <td>Jenis Ruagan : </td>
+                <td><?php echo $row->jenis_ruangan ?></td>
+              </tr>
+              <tr>
+                <td>Keterangan : </td>
+                <td><?php echo $row->keterangan ?></td>
+              </tr>
+            </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
 	   <?php } ?>
 
 	  </div>

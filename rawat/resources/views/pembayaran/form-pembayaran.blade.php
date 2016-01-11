@@ -91,7 +91,11 @@
                                 <?php $a = $data->tanggal_masuk;
                                       $b = date('d-m-Y');
                                       $c = $b-$a;
-                                      echo "$c";
+                                      if ($c == 0) {
+                                        echo $c = 1;
+                                      }else{
+                                        echo "$c";
+                                      }
 
                                 ?>
 
@@ -129,7 +133,7 @@
                               <td>Obat</td>
                               <td>
                                 <?php 
-                                  $hargaobat = 300000;
+                                  echo $hargaobat = 300000;
                                  ?>
                               </td>          
                               
@@ -139,7 +143,7 @@
                               <td>Lain-lain:</td>
                               <td>
                                 <?php 
-                                  $hargalain = 10000;
+                                  echo $hargalain = 10000;
 
                                  ?>
                               </td>

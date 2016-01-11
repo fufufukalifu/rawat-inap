@@ -36,7 +36,9 @@
    <div class="top-menu">
     <ul class="nav pull-right top-menu">
     	@if (Auth::guest())
-    	<li><a class="logout" href="{{ url('/auth/register') }}">Register</a></li>
+    	<li>
+        <a id="konfirmasi" class="logout" href="{{ url('/auth/register') }}">Register</a>
+      </li>
     	<li><a class="logout" href="{{ url('/auth/login') }}">Login</a></li>
 		@else
      	<li><a class="logout" href="{{ url('/auth/logout') }}">Logout</a></li>
