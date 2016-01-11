@@ -8,7 +8,7 @@
            <div class="col-md-3 col-sm-4 mb">
                 <div class="darkblue-panel pn">
                   <div class="darkblue-header">
-                    <h5><?php echo $row->kelas_ruangan ?></h5>
+                    <h5><?php echo $row->nama_ruangan ?> Kelas <?php echo $row->kelas_ruangan ?></h5>
                   </div>
                    <div class="col-md-12">
                       <a data-toggle="tab" href="#<?php echo $row->kelas_ruangan ?>"> <img src="{{ asset("/assets/img/ruangan/$row->kelas_ruangan.png") }}" width="190"></a>

@@ -32,7 +32,7 @@
       <div class="col-md-12 mb">
               <!-- WHITE PANEL - TOP USER -->
               <div class="content-panel pn">
-                <div class="col-md-2 grey-header">             
+                <div class="col-md-2 content-header">             
                   <h5>Deskripsi Umum</h5>       
                 </div>
                 <div class="col-md-12 mb">
@@ -48,31 +48,25 @@
         foreach ($data as $row) {
       ?>
 
-	  <div id="<?php echo $row->jenis_ruangan ?>" class="tab-pane fade">
-      <div class="col-md-11">
-        <div class="form-group">
-          <div class="content-panel">
-            <h4><i class="fa fa-angle-center"></i><?php echo $row->jenis_ruangan ?></h4>
-            <hr>
-            <table class="table">         
-            <tbody>
-              <tr>
-                <td>Jenis Ruagan : </td>
-                <td><?php echo $row->jenis_ruangan ?></td>
-              </tr>
-              <tr>
-                <td>Keterangan : </td>
-                <td><?php echo $row->keterangan ?></td>
-              </tr>
-            </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-	   <?php } ?>
+    <div id="<?php echo $row->jenis_ruangan ?>" class="tab-pane fade">
+      <div class="col-md-12 mb">
+              <!-- WHITE PANEL - TOP USER -->
+              <div class="content-panel pn">
+                <div class="col-md-2 content-header">             
+                  <h5><?php echo $row->jenis_ruangan ?></h5>       
+                </div>
+                <div class="col-md-12 mb">
+        <!-- menampilkan deskripsi dari kelas -->
+                  <?php echo $row->keterangan ?>
+                
 
-	  </div>
+                </div>
+              </div>
+            </div><!-- /col-md-4 -->
+     </div>
+     <?php } ?>
+
+    </div>
 </div>
 
 @endsection
