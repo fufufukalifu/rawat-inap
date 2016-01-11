@@ -94,7 +94,7 @@
 	                </div>
 
 	                <div class="form-group">
-	                    <input class="btn btn-primary" type="submit" value="Berbarui" >
+	                    <input class="btn btn-primary" type="submit" value="Perbarui" >
 	                </div>
 
                 </form>
