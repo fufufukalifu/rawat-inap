@@ -13,7 +13,11 @@
       </div>
       <div class="modal-body">
         <?php if (!isset($_GET["search"])){ ?>
+<<<<<<< HEAD
           <?php var_dump($data) ?>
+=======
+          <?php var_dump($data['pasiens']) ?>
+>>>>>>> fc9d28dce0a0cda0348badde36c4fe4d01611840
           <h3>Data Tidak Tersedia</h3>
         <?php }else{  ?>
           <form>
@@ -44,8 +48,8 @@
       <div class="form-group">
         <label class="col-sm-2 col-sm-2 control-label">Cari</label>
         <div class="col-sm-5">
-            <input type="text" class="form-control" name="search" placeholder="Enter to search" id="onenter">
-            <button class="btn btn-primary" value="Cari" id="cari">cari</button>
+            <input type="text" class="form-control" name="key" placeholder="Enter to search" id="onenter"><br>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Set Pasien</button>
         </div>
       </div>
 
@@ -54,8 +58,13 @@
         <div class="col-sm-3">
          <input type="text" class="form-control" name="value">
          <br>
+<<<<<<< HEAD
          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Cari</button>
         </div>
+=======
+         <!-- <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal"  id="cari" name="search">Cari</button>
+         --></div>
+>>>>>>> fc9d28dce0a0cda0348badde36c4fe4d01611840
       </div>
       
       <div class="form-group">
@@ -131,7 +140,7 @@
               </tr>
               </thead>
               <tbody>
-              <?php foreach ($data as $obats): ?>
+              <?php foreach ($data['obats'] as $obats): ?>
                <tr>
                 <td><?=$obats->no ?></td>
                 <td><?=$obats->nama_obat ?></td>
@@ -140,6 +149,8 @@
                 <td><?=$obats->harga ?></td>   
               </tr>
               <?php endforeach ?>
+              
+
               </tbody>
             </table>
           </div><! --/content-panel -->
