@@ -130,4 +130,8 @@ class HomeController extends Controller
     // public function anggi2(){
     //     return view('ruangan.view-ruangan');
     // }
+
+     public function detail_pembayaran(){
+        return view('Pembayaran.detail-pembayaran');
+    }
 }
