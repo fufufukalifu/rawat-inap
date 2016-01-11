@@ -6,16 +6,18 @@
         foreach ($data as $row) {
       ?>
            <div class="col-md-3 col-sm-4 mb">
-                <div class="white-panel pn">
-                  <div class="white-header">
+                <div class="darkblue-panel pn">
+                  <div class="darkblue-header">
                     <h5><?php echo $row->jenis_ruangan ?></h5>
                   </div>
                    <div class="col-md-12">
-
-                        <a data-toggle="tab" href="#<?php echo $row->jenis_ruangan ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
                         <div class="col-md-12">
-							<a class="small mt" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
-						</div>
+                        <a data-toggle="tab" href="#<?php echo $row->jenis_ruangan ?>"> <img src="{{ asset("/assets/img/product.png") }}" width="120"></a>
+                       
+                         <br><br>
+                        
+            							<a class="btn btn-sm btn-clear-g" href="<?php echo 'jenisRuangan/'.$row->jenis_ruangan ?>">Detail</a>
+            						</div>
                   </div>
                 </div>
           </div><!-- /col-md-4 -->
@@ -28,8 +30,8 @@
 	  <div id="home ?>" class="tab-pane  fade in active">
       <div class="col-md-12 mb">
               <!-- WHITE PANEL - TOP USER -->
-              <div class="green-panel pn">
-                <div class="col-md-2 green-header">             
+              <div class="grey-panel pn">
+                <div class="col-md-2 grey-header">             
                   <h5>Deskripsi Umum</h5>       
                 </div>
                 <div class="col-md-12 mb">
@@ -51,8 +53,8 @@
 	  <div id="<?php echo $row->jenis_ruangan ?>" class="tab-pane fade">
       <div class="col-md-12 mb">
               <!-- WHITE PANEL - TOP USER -->
-              <div class="green-panel pn">
-                <div class="col-md-2 green-header">             
+              <div class="grey-panel pn">
+                <div class="col-md-2 grey-header">             
                   <h5><?php echo $row->jenis_ruangan ?></h5>       
                 </div>
                 <div class="col-md-12 mb">
